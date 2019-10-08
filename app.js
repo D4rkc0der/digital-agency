@@ -1,5 +1,5 @@
 const t1 = new TimelineMax({
-
+delay:2
 });
 const t2 = new TimelineMax({
 
@@ -23,7 +23,6 @@ const h1 = document.querySelector('.section-one-h1');
 const myFullpage = new fullpage('#fullpage', {
 	//options here
 	autoScrolling: true,
-	scrollHorizontally: true,
 	navigation: true,
 	navigationPosition: 'right',
 	responsiveWidth: 800,
@@ -32,7 +31,15 @@ const myFullpage = new fullpage('#fullpage', {
 		const sectionactive = fullpage_api.getActiveSection().index;
 
 		console.log(sectionactive);
-		if (sectionactive === 1 || sectionactive === 2) {
+		if (sectionactive === 0 ) {
+			document.querySelectorAll('#nav-bar .container ul li a').forEach((link) => {
+				link.style.color = 'black';
+			})
+			document.querySelector('.logo').style.color = "white";
+			document.querySelector('footer').style.color = "white";
+
+		}
+		else if(sectionactive === 1 || sectionactive === 2 ) {
 			document.querySelectorAll('#nav-bar .container ul li a').forEach((link) => {
 				link.style.color = 'black';
 			})
@@ -97,7 +104,8 @@ console.log(div);
 
 
 
-t1.fromTo(h1, 1, {
+t1
+.fromTo(h1, 1, {
 		x: -1200,
 		opacity: 0
 	}, {
@@ -117,17 +125,7 @@ t1.fromTo(h1, 1, {
 		opacity: 0
 	}, {
 		opacity: 1
-	})
-	.fromTo('.right img', 1, {
-		opacity: 0,
-		y: 250,
-		ease: Sine.easeOut
-	}, {
-		opacity: 1,
-		y: 0,
-		ease: Sine.easeOut
-	}, '-=1')
-	.fromTo('.right h1', 1, {
+	}).fromTo('.right h1', 1, {
 		opacity: 0,
 		y: 250,
 		scale: 2
@@ -136,17 +134,35 @@ t1.fromTo(h1, 1, {
 		y: 0,
 		scale: 1
 	})
-	.fromTo('.right h2', 1, {
+	.fromTo('.part-1', 0.6, {
 		opacity: 0,
 		x: 250,
-		rotation: 90
-
+		ease: Sine.easeOut
 	}, {
 		opacity: 1,
 		x: 0,
-		rotation: 0
+		ease: Sine.easeOut
+	}, )
+	.fromTo('.part-2', 0.6, {
+		opacity: 0,
+		x: 250,
+		ease: Sine.easeOut
+	}, {
+		opacity: 1,
+		x: 0,
+		ease: Sine.easeOut
+	},'-=0.3' )
+	.fromTo('.part-3', 0.6, {
+		opacity: 0,
+		x: 250,
+		ease: Sine.easeOut
+	}, {
+		opacity: 1,
+		x: 0,
+		ease: Sine.easeOut
+	},'-=0.3' );
+	
 
-	}, "-=1");
 
 
 t2.fromTo(s2h1, 1, {
@@ -206,30 +222,21 @@ t2.fromTo(s2h1, 1, {
 
 
 
-t3.fromTo('.grid-4', 1, {
-		y: -300,
-		opacity: 0
+t3.fromTo('.services-text', 1, {
+
+		y: 800,
+		
 
 
 	}, {
+
 		y: 0,
-		opacity: 1,
-		delay: 0.4
-	}).fromTo('.services-text', 1, {
-
-		scale: 2,
-		opacity: 0,
 
 
-	}, {
+	})
+	.fromTo('.services-p',1, {
 
-		scale: 1,
-		opacity: 1,
-
-	}, "-=1")
-	.fromTo('.code-bg', 0.5, {
-
-		y: -1000,
+		y: 800,
 	
 
 
@@ -238,90 +245,57 @@ t3.fromTo('.grid-4', 1, {
 		y: 0,
 		
 
-	}).fromTo('.code-bg-2', 0.5, {
+	},"-=0.6").fromTo('.box-1', 1, {
+		x: -300,
+		opacity: 0
 
-		y: 1000,
+
+	}, {
+		x: 0,
+		opacity: 1
+
+	})
+	.fromTo('.box-2', 1, {
+		y: 300,
+		opacity: 0
+
+
+	}, {
+		y: 0,
+		opacity: 1
+
+	},'-=1')
+	.fromTo('.box-3', 1, {
+		x: 300,
+		opacity: 0
+
+
+	}, {
+		x: 0,
+		opacity: 1
+
+	},'-=1').fromTo('.dsc', 0.5, {
+		y:-200,
+
+	}, {
+		y:0,
 	
-
-
-	}, {
-
-		y: 0,
-		
-
-	},"-=0.5").fromTo('.box-1', 0.5, {
-		y: -300,
-		opacity: 0
-
+	},)
+	.fromTo('.flex i', 0.5, {
+		y:200,
 
 	}, {
-		y: 0,
-		opacity: 1
-
-	})
-	.fromTo('.box-2', 0.5, {
-		y: 300,
-		opacity: 0
-
+		y:0,
+	
+	},"-=0.5").fromTo('.btn-service', 1, {
+	opacity:0
 
 	}, {
-		y: 0,
-		opacity: 1
-
-	})
-	.fromTo('.box-3', 0.5, {
-		y: -300,
-		opacity: 0
+		opacity:1
+	
+	});
 
 
-	}, {
-		y: 0,
-		opacity: 1
-
-	})
-	.fromTo('.box-4', 0.5, {
-		y: 300,
-		opacity: 0
-
-
-	}, {
-		y: 0,
-		opacity: 1,
-
-	})
-	.fromTo('.fa-atom', 3, {
-		rotation: 0,
-
-	}, {
-		rotation: 360,
-		ease: Linear.easeNone,
-		repeat: -1
-	}, "-=2").fromTo('.fa-search-plus', 1, {
-		x: 0,
-
-	}, {
-		x: 10,
-		ease: Linear.easeNone,
-		repeat: -1,
-		yoyo: true
-	}, "-=3")
-	.fromTo('.fa-thumbs-up', 1, {
-		y: 0,
-
-	}, {
-		y: 10,
-		ease: Linear.easeNone,
-		repeat: -1,
-		yoyo: true
-	}, "-=1").fromTo('.fa-user-friends', 1, {
-		x: 0,
-
-	}, {
-		x: -10,
-		ease: Bounce.easeOut,
-		repeat: -1,
-		yoyo: true
-	}, "-=1");
 
 
 t4.fromTo('#section-4 .slider-bg', 1, {
@@ -373,3 +347,13 @@ t4.fromTo('#section-4 .slider-bg', 1, {
 		y: 0,
 		opacity: 1,
 	},"-=1")
+	
+	// loader
+
+
+
+	setTimeout(()=>{
+		const loader = document.querySelector('.loader');
+		loader.style.opacity='0';
+		loader.style.zIndex='-1';
+	},1500)

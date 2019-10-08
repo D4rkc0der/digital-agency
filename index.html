@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="fullpage.css">
   <link rel="stylesheet" href="style.css">
 
+
   <title>Full Scroll Page</title>
 </head>
 
@@ -27,12 +28,20 @@
       </ul>
     </div>
   </nav>
+  <!-- Splash screen -->
+  <div class="loader">
+    <div class="loader-spinner">
+      <img src="./img/loading.gif" alt="">
+    </div>
+  </div>
+ 
+  <!-- Splash screen -->
   <div id="fullpage">
     <!-- Secction one -->
-    <div class="section section-one " data-anchor="page1">
+    <div class="section section-one" data-anchor="page1">
       <div class="container">
-       <div class="flex-2">
-         <div class="left">
+      <div class="flex-2">
+        <div class="left">
           <h1 class="section-one-h1">We make 
             digital <span class="strong-bg">beautiful.</span> </h1>
             <p>These are the words we live by in everything we do. Every story we tell, every brand we build, and every interaction we create must not only look beautiful, but has to feel and function beautifully, too. Crafted to perfection.</p>
@@ -40,15 +49,22 @@
             
          </div>
          <div class="right">
-          <img src="./img/pic1.jpg" alt="">
-          <h1>A Digital 
-            Creative Agency</h1>
-            <h2>Software House</h2>
-         </div>
-         
-         
-       </div>
+          <h1> <span class="strong-bg">Our</span> Partners</h1>
+          
+          <img class="part-1" src="./img/cp1.png" alt="">
+          <img class="part-1" src="./img/cp2.png" alt="">
+          
+          <img class="part-2" src="./img/cp5.png" alt="">
+          <img class="part-2"  src="./img/cp6.png" alt="">
+          <img  class="part-3" src="./img/cp7.png" alt="">
+          <img  class="part-3" src="./img/cp8.png" alt="">
+        </div>
       </div>
+     
+      </div>
+   
+    
+     
     
     </div>
     <!-- Section 2 -->
@@ -74,37 +90,53 @@
     <div id="section-3" class="section" data-anchor="page3">
 
       <div class="container">
-         <h1 class="services-text">Top Ranked <span class="strong">Services</span></h1>
+        <div class="hide-div">
+            <h1 class="services-text">Top Ranked <span class="strong">Services</span></h1>
+        </div>
+         <div class="hide-div">
+            <p class="services-p">Graphic Design Services. Websites, businesses and brands are all much more than just words and products <br> they're also images and art. Graphic Design is an itegral part of any business and <br>that's as true for our companys image and marketing</p>
+         </div>
+         
 <!--  -->
-        <div class="grid-4">
-          <div class="box box-1">
-            <i class="fas fa-atom"></i>
-            <h1>Proven Performance</h1>
+        <div class="flex-3">
+          <div class="flex box-1">
+            <div class="hide-div">
+                <i class="fab fa-sketch"></i>
+            </div>
+          
+            <h2 class="header-text">UX.UI Design</h2>
+            <div class="hide-div">
+                <p class="dsc">Check out our dribble profile for more. You can get more portofolio sample here.</p>
+            </div>
             
-            <p>Our team of 225+ is one of the largest performance digital marketing agencies in the world. We've partnered with Google, Facebook, Bing and others to bring the latest and greatest to our clients.</p>
+            <a class="btn-service" href="#">PORTOFOLIO</a>
           </div>
-          <div class="box box-2">
-            <i class="fas fa-search-plus"></i>
-            <h1>Transparent ROI Tracking</h1>
-            <p>No need to wade through complicated spreadsheets when evaluating your campaign with WebFX. All clients have free access to MarketingCloudFX, our lead, call, and ecommerce tracking software.</p>
+          <div class="flex box-2">
+            <div class="hide-div">
+                <i class="fas fa-atom strong-bg"></i>
+            </div>
+            
+            <h2 class="header-text">Graphic Design</h2>
+            <div class="hide-div">
+                <p class="dsc">Check out our dribble profile for more. You can get more portofolio sample here.</p>
+            </div>
+            <a  class="btn-service" href="#">PORTOFOLIO</a>
           </div>
-          <div class="box box-3">
-            <i class="fas fa-thumbs-up"></i>
-            <h1>Unparalleled Track Record</h1>
-            <p>We have a 91% client retention rate and a client recommendation score that's 488% higher than the nationwide average. Our 400+ client testimonials, overflowing trophy case, and award-winning culture are the perfect recipe for a successful digital campaign.</p>
-          </div>
-          <div class="box box-4">
-            <i class="fas fa-user-friends"></i>
-            <h1>Leading Digital Experts</h1>
-            <p>We've been designing and marketing websites since 1996. We keep tabs on the latest and greatest design trends but measure the success of any site launch by how well the new design is able to impact business goals. We've built websites across all niches that drive growth.</p>
+          <div class="flex box-3">
+            <div class="hide-div">
+                <i class="far fa-lightbulb"></i>
+            </div>
+            
+            <h2 class="header-text">Logo Branding</h2>
+            <div class="hide-div">
+                <p class="dsc">Check out our dribble profile for more. You can get more portofolio sample here.</p>
+            </div>
+            <a   class="btn-service" href="#">PORTOFOLIO</a>
           </div>
         </div>
-        <!--  -->
-      
       </div>
       
-      <img class="code-bg" src="./img/code-bg.png" alt="">
-      <img class="code-bg-2" src="./img/code-bg.png" alt="">
+      
     </div>
     <!-- Section 4 -->
     <div id="section-4" class="section" data-anchor="page4">
@@ -156,6 +188,7 @@
   </footer>
 
   <!-- Javascript Files -->
+
  
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TimelineMax.min.js" integrity="sha256-fIkQKQryItPqpaWZbtwG25Jp2p5ujqo/NwJrfqAB+Qk=" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js" integrity="sha256-lPE3wjN2a7ABWHbGz7+MKBJaykyzqCbU96BJWjio86U=" crossorigin="anonymous"></script>
