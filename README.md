@@ -1,5 +1,7 @@
 # Digital Agency Landing Page
-Main Stack:
+Digital Agency Page is a custom web page build on combining popular libraries to create a single scrolling and responsive web page.
+
+Main Technologies:
 <ul>
 <li>
 Html 5
@@ -17,3 +19,12 @@ FullPage.js
 TweenMax.js
 </li>
 </ul>
+
+## Authors
+
+* **Kledjon Alushani** 
+
+## Acknowledgments
+
+* [FullPage.js](https://alvarotrigo.com/fullPage/) 
+* [TweenMax.js](https://greensock.com/tweenmax/) 
